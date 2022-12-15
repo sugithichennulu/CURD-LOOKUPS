@@ -25,6 +25,13 @@ def display_webpages(request):
 
 def display_access(request):
     LAO=AccessRecords.objects.all()
+    LAO=AccessRecords.objects.filter(date='1999-11-01')
+    LAO=AccessRecords.objects.filter(date__year='2022')
+    LAO=AccessRecords.objects.filter(date__month='1')
+    LAO=AccessRecords.objects.filter(date__day='14')
+    LAO=AccessRecords.objects.filter(date__gte='1999-11-01')
+    LAO=AccessRecords.objects.filter(date__lte='1999-11-01')
+    LAO=AccessRecords.objects.filter(date__year__gte='1999')
     d={'LAO':LAO}
     return render(request,'display_access.html',d)
     
