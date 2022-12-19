@@ -34,4 +34,13 @@ def display_access(request):
     LAO=AccessRecords.objects.filter(date__year__gte='1999')
     d={'LAO':LAO}
     return render(request,'display_access.html',d)
+
+def update_webpages(request):
+    Webpage.objects.filter(topic_name='cricket').delete()
+
+    LWO=Webpage.objects.all()
+    LWO=Webpage.objects.filter(topic_name='cricket').delete()
+    d={'LWO':LWO}
+    return render(request,'display_webpages.html',d)
+
     
